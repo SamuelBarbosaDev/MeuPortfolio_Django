@@ -1,0 +1,89 @@
+{% extends 'adm/index.html' %}
+{% load static %}
+{% block title %}Contato{% endblock %}
+{% block content %}
+<main class="main" data-aos="fade" data-aos-delay="1500">
+
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2>{{ portfólio_projetos.titulo }}</h2>
+                    <p>
+                        {{ portfólio_projetos.frase }}
+                    </p>
+
+                    <a class="cta-btn" href="{% url 'contato' %}">Fale Comigo</a>
+
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Header -->
+
+    <!-- ======= Gallery Single Section ======= -->
+    <section id="gallery-single" class="gallery-single">
+        <div class="container">
+
+            <div class="position-relative h-100">
+                <div class="slides-1 portfolio-details-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+
+                        <div class="swiper-slide">
+                            <img src="{% static 'img/default/images/Em-Breve.jpg' %}" alt="capa">
+                        </div>
+                        {% for imagem in portfólio_imagens %}
+                        <div class="swiper-slide">
+                            <img src="{% static 'img/default/images/Em-Breve.jpg' %}" alt="capa">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-pagination"></div>
+
+                </div>
+            </div>
+
+            <div class="row justify-content-between gy-4 mt-4">
+
+                <div class="col-lg-8">
+                    <div class="portfolio-description">
+                        <h2>{{ portfólio_projetos.titulo }}</h2>
+                        <p>
+                            {{ portfólio_projetos.descrição }}
+                        </p>
+
+                        <div class="testimonial-item">
+                            <p>
+                                <i class="bi bi-quote quote-icon-left"></i>
+                                {{ portfólio_projetos.depoimento_do_cliente }}
+                                <i class="bi bi-quote quote-icon-right"></i>
+                            </p>
+                            <div>
+                                <img src="{{ portfólio_projetos.imagem_do_cliente.url }}" class="testimonial-img" alt="">
+                                <h3>{{ portfólio_projetos.cliente }}</h3>
+                                <h4>Designer</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="portfolio-info">
+                        <h3>Informações:</h3>
+                        <ul>
+                            <li><strong>Categoria:</strong> <span>{{ portfólio_projetos.categoria }}</span></li>
+                            <li><strong>Cliente:</strong> <span>{{ portfólio_projetos.nome_do_cliente }}</span></li>
+                            <li><strong>Data de publicação:</strong> <span>{{ portfólio_projetos.data_de_criação }}</span></li>
+                            <li><strong>URL do projeto:</strong>
+                            <li><a href="{{ portfólio_projetos.url_do_projeto }}" class="btn-visit align-self-center ">Visite
+                                    Me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Gallery Single Section -->
+
+</main><!-- End #main -->
+{% endblock %}

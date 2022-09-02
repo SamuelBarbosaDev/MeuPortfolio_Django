@@ -1,0 +1,65 @@
+{% extends 'adm/index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Contato{% endblock %}
+{% block content %}
+
+<main class=".main">
+    <!-- ======= Contact Me Section ======= -->
+    <section id="contact" class="contact ">
+        <div class="container ">
+            <div>
+                <div class="section-title" style="margin-top: 50px;">
+                    <span>Contato</span>
+                    <h2>Contato</h2>
+                </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="info-box">
+                                    <i class="bx bx-share-alt"></i>
+                                    <h3>Rede Social</h3>
+                                    <div class="social-links">
+                                        {% for rede_social in contato_redes_sociais%}
+                                        <a href="{{ rede_social.url }}" class="twitter"><i
+                                                class="bi bi-{{ rede_social.rede_social }}"></i></a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box mt-4">
+                                    <i class="bx bx-envelope"></i>
+                                    <h3>Email</h3>
+                                    <p>{{ contato.email }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box mt-4">
+                                    <i class="bx bx-phone-call"></i>
+                                    <h3>Telefone</h3>
+                                    <p>{{ contato.telefone }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div  style="margin-top: 50px ;">
+                        <form action="." method="post" class="formulario">
+                            {% if contato %}
+                                <h2 class="pb-2 " style="text-align: center;">{{ titulo_do_formulario }}</h2>
+                            {% else %}
+                                <h2 class="pb-2 " style="text-align: center;">Fale Comigo</h2>
+                            {% endif %}
+
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <div class="text-center" style="margin-top: 30px ;"><button type="submit"
+                                    class="btn btn-primary btn-block">Enviar</button></div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </section><!-- End Contact Me Section -->
+
+</main>
+{% endblock %}

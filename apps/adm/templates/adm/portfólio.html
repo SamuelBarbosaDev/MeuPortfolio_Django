@@ -1,0 +1,102 @@
+{% extends 'adm/index.html'%}
+{% load static %}
+{% block title %}Portfólio{% endblock %}
+{% block content %}
+<main class="main">
+    <!-- ======= My Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+
+            <div class="section-title" style="margin-top: 50px;">
+                <span>Portfólio</span>
+                <h2>Portfólio</h2>
+            </div>
+            {% if portfólio_projeto %}
+                <div class="col-12 filter-div">
+
+                    <form action="?" method="GET" id="form">
+
+                        <span>Filtrar por:</span>
+                        <select name="categoria" action="!" id="filter" class="form-control" >
+                            <option id="" value="">Escolha uma opção...</option>
+                            {% for categoria in portfólio_categorias %}
+                            <option value="{{categoria.categoria}}" type="submit">{{categoria.categoria}}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit" class="btn " >Filtrar</button>
+                    </form>
+                </div>
+                {% if portfólio_condição %}
+                    <p>{{portfólio_condição}}</p>
+                {% else %}
+                    <p></p>
+                {% endif %}
+
+                <div class="row portfolio-container">
+                    {% for projeto in portfólio_projeto %}
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <a href="/portfólio/projeto/{{ projeto.id }}/">
+                            <div class="portfolio-img"><img src="{% static 'img/default/images/Em-Breve.jpg' %}" class="img-fluid" alt="Capa"></div>
+                            <div class="portfolio-info">
+                                <h4>{{ projeto.titulo }}</h4>
+                                <p>{{ projeto.categoria }}</p>
+                                <a href="{% static 'img/default/images/Em-Breve.jpg' %}"
+                                    data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ projeto.categoria }}"><i
+                                        class="bx bx-plus"></i></a>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- ======= PAGINATION ======= -->
+                <div class="pagination d-flex justify-content-center">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            {% if portfólio_projeto.has_previous %}
+                                {% if request.GET.categoria %}
+                                <li class="page-item"><a class="page-link" href="?page={{ portfólio_projeto.previous_page_number }}&categoria={{request.GET.categoria}}"> << </a></li>
+                                {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ portfólio_projeto.previous_page_number }}"> <<  </a></li>
+                                {% endif %}
+                            {% endif %}
+    <!-- -------------------------------- -->
+                            {% for page in portfólio_projeto.paginator.page_range %}
+                                {% if page == portfólio_projeto.number %}
+                                
+                                    {% if request.GET.categoria %}
+                                            <li class="page-item "><a class="page-link activer" style="color: white;" href="?page={{page}}&categoria={{request.GET.categoria}}">{{page}}</a></li>
+
+                                    {% else %}
+                                            <li class="page-item "><a class="page-link activer" style="color: white;" href="?page={{page}}">{{page}}</a></li>
+                                    {% endif %}
+
+                                {% else %}
+                                    {% if request.GET.categoria %}
+                                            <li class="page-item "><a class="page-link" href="?page={{page}}&categoria={{request.GET.categoria}}">{{page}}</a></li>
+
+                                    {% else %}
+                                            <li class="page-item "><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+    <!-- -------------------------------- -->
+
+                            {% if portfólio_projeto.has_next %}
+                                {% if request.GET.categoria %}
+                                <li class="page-item"><a class="page-link" href="?page={{ portfólio_projeto.next_page_number }}&categoria={{request.GET.categoria}}"> >> </a></li>
+                                {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ portfólio_projeto.next_page_number }}">  >> </a></li>
+                                {% endif %}
+                            {% endif %}
+                        </ul>
+                    </nav><!-- End PAGINATION -->
+                {% else %}
+
+                {% endif %}
+            </div>
+        </div>
+    </section><!-- End My Portfolio Section -->
+
+</main>
+{% endblock %}

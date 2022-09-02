@@ -1,0 +1,99 @@
+{% load static %}
+{% load tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>{% block title %}{% endblock %}</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="{{ site.icon_32x32.url }}" rel="icon">
+    <link href="{{ site.icon_150x150.url }}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Laura - v4.8.1
+    * Template URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex justify-content-center align-items-center margin-bottom">
+
+        <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto {{ativo_s}}" href="{% url 'sobre' %}">Sobre</a></li>
+            <li><a class="nav-link scrollto {{ativo_p}}" href="{% url 'portfólio' %}">Portfólio</a></li>
+            <li><a class="nav-link scrollto {{ativo_c}}" href="{% url 'contato' %}">Contato</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </header><!-- End Header -->
+
+    {% block content%}
+    {% endblock %}
+
+    {% if site %}
+        <!-- ======= Footer ======= -->
+        <footer id="footer" style="background: url('{% default_images 3 %}') top center ;">
+            <div class="container">
+            <h3>{{ site.nome }}</h3>
+            <p>{{ site.frase }}</p>
+            <div class="social-links">
+                {% for rede_social in contato_redes_sociais%}
+                <a href="{{ rede_social.url }}" class="twitter"><i
+                        class="bi bi-{{ rede_social.rede_social }}"></i></a>
+                {% endfor %}
+            </div>
+            </div>
+        </footer><!-- End Footer -->
+    
+    {% else %}
+        <!-- ======= Footer ======= -->
+        <footer id="footer" style="background: url('{% default_images 3 %}') top center ;">
+            <div class="container">
+            <h3>Nome</h3>
+            <p>Frase</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/samuelbarbosa_dev/" class="twitter"><i
+                        class="bi bi-instagram"></i></a>
+            </div>
+            </div>
+        </footer><!-- End Footer -->
+    {% endif %}
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

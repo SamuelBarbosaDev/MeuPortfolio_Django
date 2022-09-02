@@ -1,0 +1,301 @@
+{% extends 'adm/index.html'%}
+{% load static %}
+{% load tags %}
+{% block title %}Portfólio{% endblock %}
+{% block content %}url
+
+<!-- ======= Hero Section ======= -->
+{% if sobre %}
+    <section id="hero" style="background: url('{% default_images 1 %}') top right">
+        <div class="hero-container">
+            <h1>{{ sobre.nome }}</h1>
+            <h2>{{ sobre.profissão }}</h2>
+            <a href="#about" class="btn-scroll scrollto" title="Scroll Down"><i class="bx bx-chevron-down"></i></a>
+        </div>
+    </section><!-- End Hero -->
+
+<main>
+    <!-- ======= About Me Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="section-title">
+                <span>Sobre mim</span>
+                <h2>Sobre mim</h2>
+                <p>{{ sobre.frase }}</p>
+            </div>
+
+            <div class="row">
+                <div class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start"
+                    style="background: url('{% default_images 2 %}') center center no-repeat"></div>
+                <div class="col-lg-8 d-flex flex-column align-items-stretch">
+                    <div class="content ps-lg-4 d-flex flex-column justify-content-center">
+                        <div class="row" style="margin-top: 25px;">
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Nome:</strong> <span>{{sobre.nome}}</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Profissão:</strong> <span>{{sobre.profissão}}</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Telefone:</strong> <span>{{contato.telefone}}</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>E-mail:</strong> <span>{{contato.email}}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-content ps-lg-4">
+                        {% for habilidade in sobre_habilidades %}
+                        <div class="progress">
+                            <span class="skill">{{ habilidade.habilidade }} <i class="val">{{habilidade.porcentagem}}%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{ habilidade.porcentagem }}"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Me Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials"
+        style="background: url('{% default_images 3 %}') top center;">
+        <div class="container position-relative">
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    {% for depoimento in portfólio_todas_as_informações_do_backend %}
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{% static 'img/default/images/depoimentos_imagem.png' %}" class="testimonial-img" alt="">
+                            <h3>{{ depoimento.nome_do_cliente }}</h3>
+                            <h4>{{ depoimento.categoria }}</h4>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                {{ depoimento.depoimento_do_cliente }}
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+                    {% endfor %}
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Testimonials Section -->
+
+{% else %}
+    <section id="hero" style="background: url('{% default_images 1 %}') top right">
+        <div class="hero-container">
+            <h1>nome</h1>
+            <h2>profissão</h2>
+            <a href="#about" class="btn-scroll scrollto" title="Scroll Down"><i class="bx bx-chevron-down"></i></a>
+        </div>
+    </section><!-- End Hero -->    
+
+<main>
+    <!-- ======= About Me Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="section-title">
+                <span>Sobre mim</span>
+                <h2>Sobre mim</h2>
+                <p>frase</p>
+            </div>
+
+            <div class="row">
+                <div class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start"
+                    style="background: url('{% default_images 2%}') center center no-repeat"></div>
+                <div class="col-lg-8 d-flex flex-column align-items-stretch">
+                    <div class="content ps-lg-4 d-flex flex-column justify-content-center">
+                        <div class="row" style="margin-top: 25px;">
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Nome:</strong> <span>nome</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Profissão:</strong> <span>profissão</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Telefone:</strong> <span>telefone</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>E-mail:</strong> <span>email</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-content ps-lg-4">
+                        <div class="progress">
+                            <span class="skill">Velocidade <i class="val">33%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="33"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill">Força<i class="val">44%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="44"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill">inteligência<i class="val">89%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="89"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill">Furtividade<i class="val">66%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="66"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill">Sorte<i class="val">4.5%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="4.5"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Me Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials"
+        style="background: url('{% default_images 3 %}') top center;">
+        <div class="container position-relative">
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{% default_images 4 %}" class="testimonial-img" alt="">
+                            <h3>Nome do cliente</h3>
+                            <h4>Site</h4>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Depoimento do cliente
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{% default_images 4 %}" class="testimonial-img" alt="">
+                            <h3>Nome do cliente</h3>
+                            <h4>Site</h4>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Depoimento do cliente
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Testimonials Section -->
+
+{% endif %}
+
+        <!-- ======= My Portfolio Section ======= -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+    
+                <div class="section-title" style="margin-top: 50px;">
+                    <a href="{% url 'portfólio' %}">
+                    <span>Portfólio</span>
+                    <h2>Portfólio</h2>
+                    </a>
+                </div>
+    
+                <div class="row portfolio-container">
+                    {% for projeto in portfólio_projeto %}
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <a href="/portfólio/projeto/{{ projeto.id }}/">
+                            <div class="portfolio-img"><img src="{% static 'img/default/images/Em-Breve.jpg' %}" class="img-fluid" alt="Capa"></div>
+                            <div class="portfolio-info">
+                                <h4>{{ projeto.titulo }}</h4>
+                                <p>{{ projeto.categoria }}</p>
+                                <a href="{% static 'img/default/images/Em-Breve.jpg' %}"
+                                    data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i
+                                        class="bx bx-plus"></i></a>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+    
+    
+                </div>
+            </div>
+    
+        </section><!-- End My Portfolio Section -->
+
+    <!-- ======= Contact Me Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <span>Contato</span>
+                <h2>Contato</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="info-box">
+                        <i class="bx bx-share-alt"></i>
+                        <h3>Rede Social</h3>
+                        <div class="social-links">
+                            {% for rede_social in contato_redes_sociais%}
+                            <a href="{{ rede_social.url }}" class="twitter"><i
+                                    class="bi bi-{{ rede_social.rede_social }}"></i></a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box mt-4">
+                        <i class="bx bx-envelope"></i>
+                        <h3>Email</h3>
+                        <p>{{ contato.email }}</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box mt-4">
+                        <i class="bx bx-phone-call"></i>
+                        <h3>Telefone</h3>
+                        <p>{{ contato.telefone }}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Contact Me Section -->
+</main>
+{% endblock %}
