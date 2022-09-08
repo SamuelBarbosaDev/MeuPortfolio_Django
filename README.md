@@ -18,7 +18,8 @@
 
 <h3> O que aprendi:</h3>
     <p>
-        
+        De ante mão digo que aprendi muito coisa, por exemplo aprendi que é necessario estudo sobre AWS,
+        para aumenta a qualidade dos projetos no futuru.
     </p>
 
 <h3>Tecnologias utilizadas:</h3>
