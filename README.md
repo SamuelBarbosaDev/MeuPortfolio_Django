@@ -10,3 +10,37 @@
         negócios, etc.
         Link : https://samuelbarbosa-portfolio.herokuapp.com/
     </p>
+    
+<h3>Como Funciona:</h3>
+    <p>
+        
+    </p>
+
+<h3> O que aprendi:</h3>
+    <p>
+        
+    </p>
+
+<h3>Tecnologias utilizadas:</h3>
+
+  - Linguagens:
+    - python==3.10.4
+  
+  - Libs:
+    - asgiref==3.5.2
+    - autopep8==1.7.0
+    - dj-database-url==1.0.0
+    - Django==4.1
+    - django-crispy-forms==1.14.0
+    - django-filter==22.1
+    - django-on-heroku==1.1.2
+    - gunicorn==20.1.0
+    - Pillow==9.2.0
+    - psycopg2-binary==2.9.3
+    - pycodestyle==2.9.1
+    - python-decouple==3.6
+    - sqlparse==0.4.2
+    - toml==0.10.2  
+    - whitenoise==6.2.0
+  - Framework:
+    - Django==4.1
