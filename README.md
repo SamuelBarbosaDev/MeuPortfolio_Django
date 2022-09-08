@@ -7,8 +7,8 @@
         desenvolvimento, até que enfim ele fosse ao ar, no dia 3 
         de setembro, resumindo aprendi muito com essa experiência 
         desde como fazer um deploy, testar, montar a regra de 
-        negócios, etc.
-        Link : https://samuelbarbosa-portfolio.herokuapp.com/
+        negócios, etc. 
+    <a href="https://samuelbarbosa-portfolio.herokuapp.com/">Link para o site</a>: 
     </p>
     
 <h3>Como Funciona:</h3>
