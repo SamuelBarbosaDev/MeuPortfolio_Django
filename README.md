@@ -18,18 +18,18 @@
 
 <h3> O que aprendi:</h3>
     <p>
-        De ante mão digo que aprendi muito coisa, por exemplo aprendi que é necessario estudar sobre AWS,
-        para aumenta a qualidade dos meus projetos no futuru, durante o desenvolvimento do projeto precisei
-        mudar o desigh dos formulários, foi que descobrir o django-crispy-forms que deu outra cara para o meus
-        formulários, a utilização de bootstrap ajudo muito no desenvolvimento do portfólio pois economizou tempo,
-        além de tirar a necessidade de ter que fazer tudo na mão com css.
-        O pillow foi outro achado, pois, ele foi uma mão na roda, durante o desenvolvimento do projeto,
-        tive a necessidade de fazer o uploard de imagem, porém até onde sabia não tinha um forma pronta de
-        fazer isso dentro do django "OBS: tinha uma forma de fazer isso com os formulario, porém no meu caso
-        precisa ser feito na area de administração do site", foi que descobrir um tutoria de um americano,
-        resolvi o meu problema, 
-        <a href="https://www.youtube.com/watch?v=-0nYBqY9i5w&list=PL9UTba6pPW3LM_D8GG8bjLX8EIaksgGpM&index=10">aqui está o link</a>,
-        dsafasdf
+    De antemão digo que aprendi muita coisa, por exemplo, aprendi que é necessário estudar sobre AWS, 
+    para aumentar a qualidade dos meus projetos no    futuro, durante o desenvolvimento do projeto precisei 
+    mudar o design dos formulários, foi aí que descobrir o django-crispy-forms que deu outra cara para os 
+    meus formulários, a utilização de bootstrap ajudou muito no desenvolvimento do portfólio, pois, economizou 
+    tempo, além de tirar a necessidade de ter que fazer tudo na mão com css. 
+    O pillow foi outro achado, pois, ele foi uma mão na roda, durante o desenvolvimento do projeto, tive a 
+    necessidade de fazer o uploard de imagem, porém até onde sabia não tinha uma forma pronta de fazer isso 
+    dentro do django "OBS: tinha uma forma de fazer isso com o formulário, porém no meu caso precisava ser 
+    feito na área de administração do site", foi aí que descobrir um tutorial de um americano, 
+    <a href="https://www.youtube.com/watch?v=-0nYBqY9i5w&list=PL9UTba6pPW3LM_D8GG8bjLX8EIaksgGpM&index=10">aqui está o link</a>, 
+    tive muitos outros conhecimentos que adquiri, porém, são muitos para serem listados.
+
        </p>
 
 <h3>Tecnologias utilizadas:</h3>
