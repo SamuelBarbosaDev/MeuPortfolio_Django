@@ -34,7 +34,7 @@
     para aumentar a qualidade dos meus projetos no    futuro, durante o desenvolvimento do projeto precisei 
     mudar o design dos formulários, foi aí que descobrir o django-crispy-forms que deu outra cara para os 
     meus formulários, a utilização de bootstrap ajudou muito no desenvolvimento do portfólio, pois, economizou 
-    tempo, além de tirar a necessidade de ter que fazer tudo na mão com css. 
+    muito tempo, além de tirar a necessidade de ter que fazer tudo na mão com css. 
     O pillow foi outro achado, pois, ele foi uma mão na roda, durante o desenvolvimento do projeto, tive a 
     necessidade de fazer o uploard de imagem, porém até onde sabia não tinha uma forma pronta de fazer isso 
     dentro do django "OBS: tinha uma forma de fazer isso com o formulário, porém no meu caso precisava ser 
