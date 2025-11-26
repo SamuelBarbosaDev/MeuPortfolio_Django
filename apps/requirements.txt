@@ -1,7 +1,7 @@
 asgiref==3.5.2
 autopep8==1.7.0
 dj-database-url==1.0.0
-Django==4.2.25
+Django==4.2.26
 django-crispy-forms==1.14.0
 django-filter==22.1
 django-on-heroku==1.1.2
